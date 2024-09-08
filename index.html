@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        .description {
+            background-color: #e9f5ff;
+            border: 1px solid #b8daff;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        textarea, input[type="url"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            height: 300px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        button, .button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        button:hover, .button:hover {
+            background-color: #003d82;
+        }
+        #outputContainer {
+            margin-top: 20px;
+        }
+        #teaserOutput {
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Teaser Creator</h1>
+    
+    <div class="description">
+        <p>Welcome to the Job Teaser Creator. This tool helps you prepare job information for AI-assisted teaser creation. Here's how it works:</p>
+        <ol>
+            <li>Enter the job ad URL and company logo URL (if available)</li>
+            <li>Paste the full job ad into the form</li>
+            <li>Review and edit the Job Teaser Template if needed</li>
+            <li>Click "Prepare for AI" to format the content</li>
+            <li>Use the "Copy to Clipboard" button to copy the prepared content</li>
+            <li>Click on the ChatGPT or Claude button to open your preferred AI tool</li>
+            <li>Paste the copied content into the AI chat to generate your job teaser</li>
+        </ol>
+        <p><strong>Pro Tip:</strong> The AI will enhance the provided template to create an interactive job teaser with tabs and animations.</p>
+    </div>
+
+    <form id="jobTeaserForm">
+        <label for="jobAdUrl">Job Ad URL:</label>
+        <input type="url" id="jobAdUrl" name="jobAdUrl" required>
+
+        <label for="logoUrl">Company Logo URL (if available):</label>
+        <input type="url" id="logoUrl" name="logoUrl">
+
+        <label for="fullJobAd">Paste Full Job Ad Here:</label>
+        <textarea id="fullJobAd" name="fullJobAd" required></textarea>
+
+        <label for="jobTeaserTemplate">Job Teaser Template (Editable):</label>
+        <textarea id="jobTeaserTemplate" name="jobTeaserTemplate" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #007bff;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            padding: 15px;
+        }
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-right: 15px;
+        }
+        .title-location {
+            flex-grow: 1;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 0 5px;
+        }
+        .location {
+            color: #e0e0e0;
+            font-size: 1em;
+        }
+        .content {
+            padding: 15px;
+        }
+        h2 {
+            color: #007bff;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="LOGO_URL" alt="Company Logo" class="logo">
+            <div class="title-location">
+                <h1 class="job-title">JOB_TITLE</h1>
+                <div class="location">📍 LOCATION</div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>About the Role</h2>
+            <p>COMPANY_NAME is seeking a JOB_TITLE to join our team in LOCATION. This role involves BRIEF_DESCRIPTION.</p>
+            
+            <h2>Key Responsibilities</h2>
+            <ul>
+                <li>RESPONSIBILITY_1</li>
+                <li>RESPONSIBILITY_2</li>
+                <li>RESPONSIBILITY_3</li>
+            </ul>
+            
+            <h2>Requirements</h2>
+            <ul>
+                <li>REQUIREMENT_1</li>
+                <li>REQUIREMENT_2</li>
+                <li>REQUIREMENT_3</li>
+            </ul>
+            
+            <h2>Benefits</h2>
+            <ul>
+                <li>BENEFIT_1</li>
+                <li>BENEFIT_2</li>
+                <li>BENEFIT_3</li>
+            </ul>
+            
+            <a href="JOB_AD_URL" class="apply-button" target="_blank">Apply Now</a>
+        </div>
+    </div>
+</body>
+</html>
+        </textarea>
+
+        <button type="submit">Prepare for AI</button>
+    </form>
+
+    <div id="outputContainer" style="display:none;">
+        <button id="copyButton">Copy to Clipboard</button>
+        <a href="https://chat.openai.com" class="button" target="_blank">Use ChatGPT</a>
+        <a href="https://claude.ai" class="button" target="_blank">Use Claude</a>
+        <div id="teaserOutput"></div>
+    </div>
+
+    <script>
+    (function() {
+        document.getElementById('jobTeaserForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var jobAdUrl = document.getElementById('jobAdUrl').value;
+            var logoUrl = document.getElementById('logoUrl').value;
+            var fullJobAd = document.getElementById('fullJobAd').value;
+            var jobTeaserTemplate = document.getElementById('jobTeaserTemplate').value;
+
+            var jobTeaserContent = `
+Job Teaser Creation Request
+
+Job Ad URL: ${jobAdUrl}
+Company Logo URL: ${logoUrl || 'Not provided'}
+
+Full Job Ad:
+${fullJobAd}
+
+Job Teaser Template:
+${jobTeaserTemplate}
+
+Instructions for AI:
+Please enhance the provided job teaser template to create an engaging and interactive job teaser based on the full job ad information. Replace the placeholder text (in ALL_CAPS) with appropriate content from the job ad. The job teaser should be a single HTML file including CSS and JavaScript.
+
+Key enhancements to make:
+1. Add tabbed navigation for different sections (Overview, Responsibilities, Requirements, Benefits)
+2. Implement smooth transitions or animations when switching between tabs
+3. Add hover effects to the "Apply Now" button and other interactive elements
+4. Ensure the design is responsive and works well on both desktop and mobile devices
+5. If a company logo URL is provided, use it in place of LOGO_URL in the template
+
+Additional guidelines:
+- Keep the content concise and engaging, highlighting the most attractive aspects of the role
+- Ensure all interactive elements (tabs, animations) are functional
+- Use modern CSS features for layout and animations
+- Implement the necessary JavaScript for the interactive features
+- Optimize the code for performance and maintainability
+- Maintain the overall style and color scheme of the original template, but feel free to enhance it
+
+Please provide the complete HTML file with embedded CSS and JavaScript for the interactive job teaser. The file should be self-contained and ready to use when opened in a web browser.`;
+
+            document.getElementById('teaserOutput').textContent = jobTeaserContent;
+            document.getElementById('outputContainer').style.display = 'block';
+        });
+
+        document.getElementById('copyButton').addEventListener('click', function() {
+            var teaserOutput = document.getElementById('teaserOutput');
+            navigator.clipboard.writeText(teaserOutput.textContent).then(function() {
+                alert('Content copied to clipboard! Use ChatGPT or Claude to generate your interactive job teaser.');
+            }).catch(function() {
+                alert('Failed to copy content. Please try selecting and copying manually.');
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
