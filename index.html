@@ -1,49 +1,4 @@
 
-    </div>
-
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
-            slides[slideIndex-1].classList.add("active");  
-            dots[slideIndex-1].classList.add("active");
-        }
-
-        function toggleFullAd() {
-            const fullJobAd = document.getElementById("fullJobAd");
-            const checkbox = document.getElementById("fullAdToggle");
-            fullJobAd.style.display = checkbox.checked ? "block" : "none";
-        }
-
-        // Auto-slide functionality
-        setInterval(() => {
-            plusSlides(1);
-        }, 5000); // Change slide every 5 seconds
-    </script>
-</body>
-</html>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
